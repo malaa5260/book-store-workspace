@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "strict": true,
     "noImplicitOverride": true,
@@ -28,5 +28,11 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ]
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "moduleResolution": "Node10"
+    }
+  }
 }
