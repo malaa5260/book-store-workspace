@@ -1,0 +1,62 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome to BookStore</h1>
+      <p class="hero-subtitle">
+        Discover thousands of books from your favorite authors. From bestsellers
+        to hidden gems, find your next great read.
+      </p>
+      <div class="hero-actions">
+        <lib-button variant="primary" size="lg" routerLink="/books">
+          Browse Books
+        </lib-button>
+        <lib-button variant="outline" size="lg" routerLink="/categories">
+          View Categories
+        </lib-button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="book-stack">
+        <div class="book book-1"></div>
+        <div class="book book-2"></div>
+        <div class="book book-3"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Featured Books Section -->
+  <section class="featured-section">
+    <div class="section-header">
+      <h2>Featured Books</h2>
+      <p>Handpicked selections from our editors</p>
+    </div>
+    @if(featuredBooks.length > 0) {
+    <div class="books-grid">
+      <lib-card
+        *ngFor="let book of featuredBooks"
+        class="book-card"
+        [interactive]="true"
+        (click)="viewBook(book.id)"
+      >
+        <div class="book-image">
+          <img [src]="book.images[0]" [alt]="book.title" />
+        </div>
+        <div class="book-info">
+          <h3 class="book-title">{{ book.title }}</h3>
+          <p class="book-author">by {{ book.author }}</p>
+          <div class="book-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text">({{ book.reviewCount }} reviews)</span>
+          </div>
+          <p class="book-price">${{ book.price | number:'1.2-2' }}</p>
+        </div>
+      </lib-card>
+    </div>
+    }
+    @if(featuredBooks.length === 0) {
+    <div class="loading-state">
+      <p>Loading featured books...</p>
+    </div>
+  }
+  </section>
+</div>

@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@angular-demo/data-access": ["shared/data-access/src/index.ts"],
+      "@angular-demo/models": ["shared/models/src/index.ts"],
+      "@angular-demo/ui-components": ["shared/ui-components/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

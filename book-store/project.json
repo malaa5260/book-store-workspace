@@ -20,7 +20,8 @@
       "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "book-store:build",
-        "spa": true
+        "spa": true,
+        "ignoreErrors": true
       }
     }
   }
